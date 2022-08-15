@@ -1,0 +1,44 @@
+.orders {
+  background-color: white;
+  width: 94%;
+  margin: 0 auto;
+  border-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.orders__active,
+.orders__past {
+  color: var(--lightblue);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.orders__active {
+  margin-bottom: 0rem;
+
+  padding-top: 1rem;
+}
+
+.orders__active > h4,
+.orders__past > h4 {
+  font-size: 1.25rem;
+  padding-left: 1rem;
+}
+
+.orders__delTime {
+  padding: 1rem 0;
+  padding-left: 4rem;
+}
+
+.orders__detail {
+  border-radius: 0.5rem;
+  /* width: 90%; */
+  margin: 1rem auto;
+  /* border: 1px solid blue; */
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 255, 0.4);
+}
+

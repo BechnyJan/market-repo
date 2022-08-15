@@ -1,0 +1,13 @@
+.profileheader {
+  display: flex;
+  color: var(--white);
+  font-size: 1.25rem;
+  width: 100%;
+  padding-left: 0;
+  justify-content: space-between;
+}
+
+.profileheader__active {
+  color: var(--darkblue);
+  font-weight: 700;
+}

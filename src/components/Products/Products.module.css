@@ -1,0 +1,27 @@
+.products {
+  margin: 1rem auto;
+  width: 90%;
+  min-height: fit-content;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+}
+
+.products__heading {
+  margin-bottom: 1rem;
+  background-color: var(--backgroundblue);
+}
+
+.products__heading > h2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-left: 1rem;
+  color: var(--darkblue);
+  font-style: italic;
+}
+
+.products__grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 1rem;
+}

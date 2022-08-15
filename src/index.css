@@ -1,13 +1,76 @@
+:root {
+  --searchbar: rgb(29, 0, 230);
+  --hoverblue: rgb(65, 152, 228);
+  --backgroundblue: rgb(43, 141, 226);
+  --lightbluehover: rgb(66, 90, 228);
+  --lightblue: rgb(55, 80, 227);
+  --inputblue: rgb(55, 90, 136);
+  --darkblue: rgb(6, 41, 71);
+  --error: rgb(255, 23, 23);
+  --error-text: rgb(255, 88, 88);
+  --white: white;
+}
+
 body {
+  background-color: var(--darkblue);
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+}
+
+a,
+li {
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  margin: 0;
+}
+
+input,
+textarea {
+  color: inherit;
+}
+
+.error {
+  color: var(--error);
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.error > span {
+  font-style: italic;
+  font-size: 18px;
+}
+
+.error > span > a {
+  text-decoration: underline 1px var(--error-text);
+  color: var(--error-text);
+}
+
+.Error {
+  color: red;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  font-size: 1.125rem;
 }

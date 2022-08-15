@@ -1,0 +1,9 @@
+.button {
+  cursor: pointer;
+  background: var(--lightblue);
+  padding: 0.25rem 1rem;
+  border: 1px solid;
+  border-color: var(--darkblue);
+  color: var(--white);
+  transition: all 0.3s ease-in;
+}
