@@ -35,7 +35,6 @@ let basketT: DataType[] = JSON.parse(localStorage.getItem("cart") || "[]");
 console.log(basketT);
 let amounT: number = JSON.parse(localStorage.getItem("amount") || "0");
 // let recreatedInit = [{basket: [...basketT],amount: basketT.amount}]
-let check: void;
 
 const initialState: InitState = { basket: basketT, amount: amounT };
 console.log(initialState);
@@ -50,9 +49,7 @@ export const CartContext = React.createContext<InitStateContext>({
 
 const reducer = (state: InitState, action: any): InitState => {
   if (action.type === "ADD__TO__CART") {
-    // console.log("Hello", action.payload);
     const updatedAmount = state.amount + action.payload.price;
-    let amountLocal: void;
     console.log(updatedAmount);
     // let receivedData;
     const existingIndex = state.basket.findIndex(
@@ -64,10 +61,9 @@ const reducer = (state: InitState, action: any): InitState => {
     if (existingCartItem) {
       let updatedItem = {
         ...existingCartItem,
-        amountItem:
-          existingCartItem.amountItem < 1
-            ? existingCartItem.amountItem + 0
-            : existingCartItem.amountItem + action.payload.amountItem,
+        amountItem: (existingCartItem.amountItem <1)
+        ? existingCartItem.amountItem + 0
+        : existingCartItem.amountItem + action.payload.amountItem,
       };
       receivedData = [...state.basket];
       receivedData[existingIndex] = updatedItem;
@@ -84,9 +80,9 @@ const reducer = (state: InitState, action: any): InitState => {
     //   const result = action.payload.id === array[i];
     //   console.log(result);
     // let basketLocal = [{ basket: [...receivedData], amount: updatedAmount }];
-    check = localStorage.setItem("cart", JSON.stringify(receivedData));
-    amountLocal = localStorage.setItem("amount", JSON.stringify(updatedAmount));
-    console.log(check, amountLocal);
+    localStorage.setItem("cart", JSON.stringify(receivedData));
+    localStorage.setItem("amount", JSON.stringify(updatedAmount));
+    // console.log(checkCart, amountLocal);
     // }
     // }
     return { basket: receivedData, amount: updatedAmount };
@@ -99,7 +95,7 @@ const reducer = (state: InitState, action: any): InitState => {
     const existingItem = state.basket[existingCartItem];
     console.log(existingItem);
 
-    const updatedAmount = state.amount - existingItem.price;
+    const updatedAmount = state.amount - existingItem?.price;
     let updatedItems;
     if (existingItem.amountItem === 1) {
       updatedItems = state.basket.filter((item) => item.id !== action.id);
@@ -121,7 +117,7 @@ const reducer = (state: InitState, action: any): InitState => {
     let updatedItems: any[] = [];
     let totalAmount: number = 0;
     localStorage.setItem("cart", JSON.stringify(updatedItems));
-    localStorage.setItem("amount",JSON.stringify(totalAmount));
+    localStorage.setItem("amount", JSON.stringify(totalAmount));
     // localStorage.removeItem("cart");
     return { basket: updatedItems, amount: totalAmount };
     // return initialState;

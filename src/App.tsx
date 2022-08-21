@@ -19,7 +19,7 @@ function App() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<null | string | unknown>();
   const authContext = useContext(AuthContext);
-  console.log(searchResults);
+  // console.log(searchResults);
 
   useEffect(() => {
     const fetchData = async () => {

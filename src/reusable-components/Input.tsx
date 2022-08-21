@@ -43,7 +43,7 @@ const Input: FC<InputProps> = ({
     }
   };
 
-  console.log(state);
+  // console.log(state);
 
   return (
     <>

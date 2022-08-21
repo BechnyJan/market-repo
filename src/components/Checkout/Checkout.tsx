@@ -9,6 +9,10 @@ const Checkout = () => {
   const clearHandler = () => {
     cartContext.remove();
   };
+
+  const removeHandler = (id: number) => {
+    cartContext.removeFromCart(id);
+  };
   return (
     <div className={classes.checkout}>
       <div className={classes.checkout__heading}>
@@ -28,7 +32,13 @@ const Checkout = () => {
           <div className={classes.checkout__container}>
             <div className={classes.checkout__left}>
               {cartContext.basket?.map((item, index) => (
-                <CheckoutProduct i={index} key={index} checkout={item} />
+                <CheckoutProduct
+                  onRemove={removeHandler}
+                  animationProp={false}
+                  i={index}
+                  key={index}
+                  checkout={item}
+                />
               ))}
             </div>
             {/* <div className={classes.checkout__right}> */}

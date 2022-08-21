@@ -5,6 +5,33 @@
   background-color: var(--white);
   border-radius: 0.185rem;
   padding: 0.5rem;
+  position: relative;
+}
+
+.checkoutAnimation {
+  animation: fadeAway 0.5s ease-out forwards;
+}
+
+@keyframes fadeAway {
+  0% {
+    top: 0;
+    left: 0;
+    opacity: 1;
+  }
+  50% {
+    top: 100px;
+    opacity: .7;
+    /* left: -60px */
+  }
+  85% {
+    
+  }
+  100% {
+    top: -90px;
+    /* left: -260px; */
+    opacity: 0;
+    /* display: none; */
+  }
 }
 
 .checkoutProduct__info {

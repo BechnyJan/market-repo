@@ -8,7 +8,7 @@ type ProductsProps = {
   error: JSX.Element | undefined;
 };
 export type DataType = {
-  amount?: number;
+  // amount?: number;
   name: string;
   price: number;
   id: number;
@@ -22,7 +22,7 @@ export type DataType = {
 const Products: FC<ProductsProps> = ({ data, error }) => {
   //   console.log(data);
   // const { description, id, price, company, photo, isFavourited, name } = data;
-  console.log(data);
+  // console.log(data);
 
   const cartContext = useContext(CartContext);
   // console.log(cartContext.basket);

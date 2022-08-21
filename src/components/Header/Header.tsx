@@ -30,7 +30,7 @@ const Header: FC<HeaderProps> = ({ posts, setSearchResults }) => {
   const [inputStr, setInputStr] = useState<string>("");
   const [show, setShow] = useState<boolean>(false);
   //   const match = useMatch<ParamParseKey<Path>, string>();
-  console.log(inputStr);
+  // console.log(inputStr);
   // let ;
   let resultsArray: React.MutableRefObject<DataType[] | null> = useRef<
     DataType[] | null
@@ -47,7 +47,7 @@ const Header: FC<HeaderProps> = ({ posts, setSearchResults }) => {
   };
 
   const changeHandler = (data: string) => {
-    console.log(data);
+    // console.log(data);
   };
 
   const singoutHandler = () => {
@@ -71,10 +71,10 @@ const Header: FC<HeaderProps> = ({ posts, setSearchResults }) => {
     dataArray.push(object);
     // console.log(object);
   }
-  console.log(dataArray);
+  // console.log(dataArray);
 
   const displayArrayHandler = () => {
-    console.log(!!inputStr);
+    // console.log(!!inputStr);
 
     resultsArray.current = dataArray.filter(
       (post) =>
@@ -82,7 +82,7 @@ const Header: FC<HeaderProps> = ({ posts, setSearchResults }) => {
         post.description.includes(inputStr) ||
         post.company.includes(inputStr)
     );
-    console.log(resultsArray, "ahoj");
+    // console.log(resultsArray, "ahoj");
 
     setSearchResults(resultsArray.current);
     setShow(!!inputStr);
